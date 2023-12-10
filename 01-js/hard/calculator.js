@@ -16,6 +16,48 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  constructor(result) {
+    this.clear();
+  }
+
+  add(number) {
+    this.result += number;
+  }
+
+  subtract(number) {
+    this.result -= number;
+  }
+
+  multiply(number) {
+    this.result *= number;
+  }
+
+  divide(number) {
+    if (number != 0) {
+      this.result = this.result / number;
+    } else {
+      throw new Error("Cannot devide by 0");
+    }
+  }
+
+  clear() {
+    this.result = 0;
+  }
+
+  getResult() {
+    return this.result;
+  }
+
+  calculate(expr) {
+    let cleanExpr = expr.replaceAll(" ", "");
+    let data = eval(cleanExpr);
+    if (isFinite(data)) {
+      this.result = eval(cleanExpr);
+    } else {
+      throw new Error("Cannot devide by 0");
+    }
+  }
+}
 
 module.exports = Calculator;

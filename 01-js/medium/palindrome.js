@@ -4,7 +4,25 @@
 */
 
 function isPalindrome(str) {
-  return true;
+  return makeCleanString(str) === makeCleanString(reverseString(str))
+    ? true
+    : false;
+}
+
+// bruteforce solution
+function reverseString(str) {
+  let reversed = [];
+  // reversed loop through string to make it backwards
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed.push(str[i]);
+  }
+  //conver array back to string
+  return reversed.toString();
+}
+
+function makeCleanString(str) {
+  // converting to lowercase and removing everything instead lowercase letters;
+  return str.toLowerCase().replaceAll(/[^a-z]/g, "");
 }
 
 module.exports = isPalindrome;

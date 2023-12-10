@@ -6,7 +6,14 @@
 */
 
 function countVowels(str) {
-    // Your code here
+  let vowels = [...str.toLowerCase().matchAll("[aeiou]")];
+  // let result = 0;
+  // for (char of str.toLowerCase()) {
+  //   if (vowels.search(`[${char}]`) > -1) {
+  //     result = result + 1;
+  //   }
+  // }
+  return vowels.length;
 }
 
 module.exports = countVowels;
