@@ -5,6 +5,13 @@
  */
 
 function sleep(milliseconds) {
+  let p = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(console.log("chaklo rab da na leke"));
+    }, milliseconds);
+  });
+  return p;
 }
 
+// sleep(1000);
 module.exports = sleep;
